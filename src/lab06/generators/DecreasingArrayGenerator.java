@@ -6,7 +6,7 @@ public class DecreasingArrayGenerator implements ArrayGenerator{
     public Integer[] generate(int n) {
         Integer[] array = new Integer[n];
         for (int i = 0; i < array.length; i++) {
-            array[i] = n - i;
+            array[i] = new Integer(n - i);
         }
         return array;
     }

@@ -6,7 +6,7 @@ public class RandomArrayGenerator implements ArrayGenerator {
     public Integer[] generate(int n) {
         Integer[] array = new Integer[n];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * n) + 1;
+            array[i] = new Integer((int) (Math.random() * n) + 1);
         }
         return array;
     }
