@@ -53,43 +53,43 @@ public class Tester {
         // System.out.println(gmsa3.isSorted(decreasingSorted));
         // System.out.println(gmsa3.getNumberOfComparisons());
 
-        // QuickSortAnalyzer qsa1 = new QuickSortAnalyzer();
-        // QuickSortAnalyzer qsa2 = new QuickSortAnalyzer();
-        // QuickSortAnalyzer qsa3 = new QuickSortAnalyzer();
-        // Comparable[] randomSorted = qsa1.sort(random);
-        // Comparable[] increasingSorted = qsa2.sort(increasing);
-        // Comparable[] decreasingSorted = qsa3.sort(decreasing);
-        // System.out.println();
-        // System.out.println(Arrays.toString(randomSorted));
-        // System.out.println(qsa1.isSorted(randomSorted));
-        // System.out.println(qsa1.getNumberOfComparisons());
-        // System.out.println();
-        // System.out.println(Arrays.toString(increasingSorted));
-        // System.out.println(qsa2.isSorted(increasingSorted));
-        // System.out.println(qsa2.getNumberOfComparisons());
-        // System.out.println();
-        // System.out.println(Arrays.toString(decreasingSorted));
-        // System.out.println(qsa3.isSorted(decreasingSorted));
-        // System.out.println(qsa3.getNumberOfComparisons());
-
-        GeneralizedQuickSortAnalyzer gqsa1 = new GeneralizedQuickSortAnalyzer(11);
-        GeneralizedQuickSortAnalyzer gqsa2 = new GeneralizedQuickSortAnalyzer(11);
-        GeneralizedQuickSortAnalyzer gqsa3 = new GeneralizedQuickSortAnalyzer(11);
-        Comparable[] randomSorted = gqsa1.sort(random);
-        Comparable[] increasingSorted = gqsa2.sort(increasing);
-        Comparable[] decreasingSorted = gqsa3.sort(decreasing);
+        QuickSortAnalyzer qsa1 = new QuickSortAnalyzer();
+        QuickSortAnalyzer qsa2 = new QuickSortAnalyzer();
+        QuickSortAnalyzer qsa3 = new QuickSortAnalyzer();
+        Comparable[] randomSorted = qsa1.sort(random);
+        Comparable[] increasingSorted = qsa2.sort(increasing);
+        Comparable[] decreasingSorted = qsa3.sort(decreasing);
         System.out.println();
         System.out.println(Arrays.toString(randomSorted));
-        System.out.println(gqsa1.isSorted(randomSorted));
-        System.out.println(gqsa1.getNumberOfComparisons());
+        System.out.println(qsa1.isSorted(randomSorted));
+        System.out.println(qsa1.getNumberOfComparisons());
         System.out.println();
         System.out.println(Arrays.toString(increasingSorted));
-        System.out.println(gqsa2.isSorted(increasingSorted));
-        System.out.println(gqsa2.getNumberOfComparisons());
+        System.out.println(qsa2.isSorted(increasingSorted));
+        System.out.println(qsa2.getNumberOfComparisons());
         System.out.println();
         System.out.println(Arrays.toString(decreasingSorted));
-        System.out.println(gqsa3.isSorted(decreasingSorted));
-        System.out.println(gqsa3.getNumberOfComparisons());
+        System.out.println(qsa3.isSorted(decreasingSorted));
+        System.out.println(qsa3.getNumberOfComparisons());
+
+        // GeneralizedQuickSortAnalyzer gqsa1 = new GeneralizedQuickSortAnalyzer(11);
+        // GeneralizedQuickSortAnalyzer gqsa2 = new GeneralizedQuickSortAnalyzer(11);
+        // GeneralizedQuickSortAnalyzer gqsa3 = new GeneralizedQuickSortAnalyzer(11);
+        // Comparable[] randomSorted = gqsa1.sort(random);
+        // Comparable[] increasingSorted = gqsa2.sort(increasing);
+        // Comparable[] decreasingSorted = gqsa3.sort(decreasing);
+        // System.out.println();
+        // System.out.println(Arrays.toString(randomSorted));
+        // System.out.println(gqsa1.isSorted(randomSorted));
+        // System.out.println(gqsa1.getNumberOfComparisons());
+        // System.out.println();
+        // System.out.println(Arrays.toString(increasingSorted));
+        // System.out.println(gqsa2.isSorted(increasingSorted));
+        // System.out.println(gqsa2.getNumberOfComparisons());
+        // System.out.println();
+        // System.out.println(Arrays.toString(decreasingSorted));
+        // System.out.println(gqsa3.isSorted(decreasingSorted));
+        // System.out.println(gqsa3.getNumberOfComparisons());
     }
     
 }

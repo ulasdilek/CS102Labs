@@ -7,61 +7,42 @@ public class QuickSortAnalyzer extends SortAnalyzer{
     
     @Override
     public Comparable[] sort(Comparable[] arr) {
-        ArrayList<Comparable> list = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            list.add(arr[i]);
-        }
-        return quickSort(list);
+        Comparable[] result = Arrays.copyOf(arr, arr.length);
+        quickSort(result, 0, result.length);
+        return result;
     }
-
-    private Comparable[] quickSort(ArrayList<Comparable> list) {
+    
+    private void quickSort(Comparable[] list, int start, int end) {
         // base case
-        if (list.size() < 2) {
-            Comparable[] result = new Comparable[list.size()];
-            for (int i = 0; i < result.length; i++) {
-                result[i] = list.get(i);
-            }
-            return result;
+        if (end - start <= 1) {
+            return;
         }
 
         // general case
-        int pivotIndex = (int) (Math.random() * list.size());
-        Comparable pivot = list.get(pivotIndex);
-        ArrayList<Comparable> smaller = new ArrayList<>();
-        ArrayList<Comparable> greater = new ArrayList<>();
-        // System.out.println("List: " + list);
-        for (int i = 0; i < list.size(); i++) {
-            Comparable cur = list.get(i);
-            // System.out.println("size: " + list.size() + ", i: " + i + ", current: " + cur);
-            if (cur != pivot) {
-                if (compare(pivot, cur) > 0) {
-                    smaller.add(cur);
-                }
-                else {
-                    greater.add(cur);
-                }
-            }
-        }
-        // System.out.println("Pivot: " + pivot.toString());
-        // System.out.println("Smaller: " + smaller);
-        // System.out.println("Greater: " + greater);
-        Comparable[] sortedSmaller = quickSort(smaller);
-        Comparable[] sortedGreater = quickSort(greater);
-        Comparable[] result = new Comparable[list.size()];
-        for (int i = 0; i < result.length; i++) {
-            if (i == sortedSmaller.length) {
-                result[i] = pivot;
-            }
-            else if (i < sortedSmaller.length) {
-                result[i] = sortedSmaller[i];
-            }
-            else {
-                result[i] = sortedGreater[i - sortedSmaller.length - 1];
-            }
-        }
-        // System.out.println("result: " + Arrays.toString(result));
-        return result;
+        Comparable temp = list[start];
+        int index = start;
+        byte fromEnd = 1; // I treat 1 as true and -1 as false, this lets me use it in numerical operations
+        int size = end - start - 1;
+        while (size > 0) {
+            int j = index + (fromEnd * size);
 
+            if (fromEnd * compare(list[j], temp) < 0) {
+                swap(list, index, j);
+                index = j;
+                fromEnd *= -1; // changes state each time there is a swap
+            }
+            size--;
+        }
+
+        quickSort(list, start, index);
+        quickSort(list, index + 1, end);
+
+    }
+
+    private void swap(Comparable[] list, int x, int y) {
+        Comparable temp = list[x];
+        list[x] = list[y];
+        list[y] = temp;
     }
     
 }
